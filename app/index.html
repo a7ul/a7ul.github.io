@@ -9,10 +9,12 @@
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/roboto-fontface/css/roboto-fontface.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/mainPage.css">
   <!-- endbuild -->
 </head>
 <body ng-app="websiteApp">
@@ -22,12 +24,12 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<div class="header">
+<div class="no-margin header">
   <div class="container-fluid" ng-include="'views/reusables/header.html'">
   </div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
   <div ng-view=""></div>
 </div>
 

@@ -355,7 +355,13 @@ module.exports = function (grunt) {
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
-        }]
+        },
+          {
+            expand: true,
+            cwd: 'bower_components/roboto-fontface',
+            src: 'fonts/*',
+            dest: '<%= yeoman.dist %>'
+          }]
       },
       styles: {
         expand: true,
@@ -431,7 +437,6 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    'filerev',
     'usemin',
     'htmlmin'
   ]);
