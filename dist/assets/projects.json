@@ -16,7 +16,7 @@
   "name": "Intro3D - IntroJS +3D Objects",
   "description": "A plugin/extension to IntroJS to add 3D animating objects to Intro JS Pages. All animations and assets are done using blender itself and not code",
   "techstack": ["Three.JS", "IntoJS", "Javascript", "HTML5", "CSS3"],
-  "homepage": "/intro3d",
+  "homepage": "/intro3D",
   "html_url": "http://github.com/master-atul/intro3D",
   "has_pages": true
 }, {
@@ -38,4 +38,22 @@
   "html_url": "https://github.com/master-atul/scrapper-x",
   "has_pages": true,
   "homepage": "http://npmjs.com/package/scrapper-x"
+}, {
+  "name": "Interpreter",
+  "description": "A voice language translator program using Google and Bing APIs",
+  "techstack": ["Java", "Google and Bing APIs"],
+  "html_url": "https://github.com/BucketDevelopers/speechtranslator",
+  "has_pages": true
+}, {
+  "name": "Gamosapien",
+  "description": "Transform your android phone into gesture based (Wii Like ) Gamepad",
+  "techstack": ["Native Android", "Java"],
+  "html_url": "https://github.com/BucketDevelopers/GamosapienAndroidApp.git",
+  "has_pages": true
+}, {
+  "name": "Android File Broadcast",
+  "description": "This android app enables any two devices (only one of them having this app installed) to transfer files",
+  "techstack": ["Native Android", "Java"],
+  "html_url": "https://github.com/BucketDevelopers/AndroidFileBroadcast.git",
+  "has_pages": true
 }]
