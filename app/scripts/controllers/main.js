@@ -8,7 +8,7 @@
  * Controller of the websiteApp
  */
 angular.module('websiteApp')
-  .controller('MainCtrl', function($http, getFile, projectsTransformer) {
+  .controller('MainCtrl', function($http, getFile, projectsTransformer,$scope) {
     var main = this;
     main.projects = [];
 
@@ -16,6 +16,7 @@ angular.module('websiteApp')
       getFile.get('/assets/projects.json').then(function(repos) {
         projectsTransformer.transform(repos, false).then(function(finalData) { //set transform(repos,true) to perform transformation
           main.projects = finalData;
+          $scope.$apply();
         });
       });
     };
