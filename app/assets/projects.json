@@ -1,4 +1,11 @@
 [{
+  "name": "VR office",
+  "description": "An example project to show how to exports blender models to Aframe VR.",
+  "techstack": ["Blender", "Aframe", "WebVR", "HTML5","CSS","Jquery"],
+  "homepage": "/AframeVR-Example",
+  "html_url": "http://github.com/master-atul/AframeVR-Example",
+  "has_pages": true
+},{
   "name": "Minion Ladder",
   "description": "A minion themed snake and ladder based game.",
   "techstack": ["Angular JS", "Bootstrap", "HTML5", "CSS3"],
