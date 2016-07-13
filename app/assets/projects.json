@@ -1,5 +1,12 @@
 [{
   "name": "VR office",
+  "description": "Loading Photosphere and 3D house models in VR Web",
+  "techstack": ["Blender", "Aframe", "WebVR", "HTML5","CSS","Jquery"],
+  "homepage": "/VRDemo",
+  "html_url": "http://github.com/master-atul/VRDemo",
+  "has_pages": true
+},{
+  "name": "VR office",
   "description": "An example project to show how to exports blender models to Aframe VR.",
   "techstack": ["Blender", "Aframe", "WebVR", "HTML5","CSS","Jquery"],
   "homepage": "/AframeVR-Example",
