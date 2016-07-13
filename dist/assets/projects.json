@@ -1,16 +1,23 @@
 [{
   "name": "VR office",
+  "description": "Loading Photosphere and 3D house models in VR Web",
+  "techstack": ["Blender", "Aframe", "WebVR", "HTML5","CSS","Jquery"],
+  "homepage": "/VRDemo",
+  "html_url": "http://github.com/master-atul/VRDemo",
+  "has_pages": true
+},{
+  "name": "VR office",
   "description": "An example project to show how to exports blender models to Aframe VR.",
   "techstack": ["Blender", "Aframe", "WebVR", "HTML5","CSS","Jquery"],
   "homepage": "/AframeVR-Example",
   "html_url": "http://github.com/master-atul/AframeVR-Example",
   "has_pages": true
 },{
-  "name": "Intro3D - IntroJS +3D Objects",
-  "description": "A plugin/extension to IntroJS to add 3D animating objects to Intro JS Pages. All animations and assets are done using blender itself and not code",
-  "techstack": ["Three.JS", "IntoJS", "Javascript", "HTML5", "CSS3"],
-  "homepage": "/intro3D",
-  "html_url": "http://github.com/master-atul/intro3D",
+  "name": "Minion Ladder",
+  "description": "A minion themed snake and ladder based game.",
+  "techstack": ["Angular JS", "Bootstrap", "HTML5", "CSS3"],
+  "homepage": "/minion-ladder",
+  "html_url": "http://github.com/master-atul/minion-ladder",
   "has_pages": true
 }, {
   "name": "Boxy - Blender with ThreeJS",
@@ -20,11 +27,11 @@
   "html_url": "http://github.com/master-atul/blender3js",
   "has_pages": true
 }, {
-  "name": "Minion Ladder",
-  "description": "A minion themed snake and ladder based game.",
-  "techstack": ["Angular JS", "Bootstrap", "HTML5", "CSS3"],
-  "homepage": "/minion-ladder",
-  "html_url": "http://github.com/master-atul/minion-ladder",
+  "name": "Intro3D - IntroJS +3D Objects",
+  "description": "A plugin/extension to IntroJS to add 3D animating objects to Intro JS Pages. All animations and assets are done using blender itself and not code",
+  "techstack": ["Three.JS", "IntoJS", "Javascript", "HTML5", "CSS3"],
+  "homepage": "/intro3D",
+  "html_url": "http://github.com/master-atul/intro3D",
   "has_pages": true
 }, {
   "name": "Qt KBC",
