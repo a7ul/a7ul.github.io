@@ -1,0 +1,6 @@
+switch to src
+make changes
+do grunt build
+copy images to dist
+copy cname to dist
+git subtree push -P dist origin master
