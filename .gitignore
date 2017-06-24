@@ -1,5 +1,12 @@
-.idea
+*.un~
+bundle/*
+!bundle/.gitkeep
+cache
 node_modules
-.tmp
-.sass-cache
-bower_components
+npm-debug.log
+.DS_Store
+.idea
+releases
+coverage
+.nyc_output
+app/assets/binaries/*
