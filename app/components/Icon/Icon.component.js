@@ -12,8 +12,8 @@ const getPath = (iconName) => {
   }
 };
 
-const Icon = ({size = '20', name, fill = '#FFFFFF'}) => (
-  <svg width={size} height={size} viewBox='0 0 1024 1024' fill={fill}>
+const Icon = ({size = '20', name, fill = '#FFFFFF', ...extraprops}) => (
+  <svg {...extraprops} width={size} height={size} viewBox='0 0 1024 1024' fill={fill}>
     <path d={getPath(name)} />
   </svg>
 );
