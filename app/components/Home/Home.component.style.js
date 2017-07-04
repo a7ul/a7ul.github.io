@@ -1,61 +1,29 @@
 import bg from '../../assets/bgg.jpg';
-import dp from '../../assets/dp1-min.png';
+import logo from '../../assets/logo.png';
 export default {
   container: {
-    backgroundColor: 'aliceblue'
-  },
-  dashboard: {
-    height: '100vh',
-    display: 'flex',
     background: `url(${bg})`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center'
+    backgroundPosition: 'center',
+    height: '100vh',
+    width: '100vw'
   },
-  profileContainer: {
-    flex: 2,
-    flexDirection: 'column'
+  header: {
+    padding: '15px 15px 0 15px'
   },
-  profileWrapper: {
-    flexDirection: 'column',
-    display: 'flex',
-    height: '100%',
-    flex: 1
-  },
-  dp: {
-    flex: 3,
-    background: `url(${dp})`,
+  logo: {
+    background: `url(${logo})`,
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center bottom'
+    height: 40,
+    width: 40
   },
-  portfolio: {
-    flex: 2,
-    padding: 10
+  dashboardContainer: {
+    display: 'flex'
   },
-  myName: {
-    fontSize: 50,
-    textAlign: 'center',
-    fontWeight: 100,
-    paddingTop: 20
-  },
-  mySkills: {
-    fontSize: 20,
-    padding: 20,
-    fontWeight: 300,
-    textAlign: 'center'
-  },
-  links: {
+  dashboard: {
+    display: 'flex',
     flex: 1
-  },
-  linkRow: {
-    flex: 1,
-    flexDirection: 'row'
-  },
-  link: {
-    flex: 1
-  },
-  rssPane: {
-    flex: 1,
   }
 };
