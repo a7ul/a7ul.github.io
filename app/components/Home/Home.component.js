@@ -3,11 +3,12 @@ import styles from './Home.component.style';
 import Dashboard from './Dashboard.component';
 import PropTypes from 'prop-types';
 import {mobileMQ} from '../../utils/mediaQuery.util';
-import RssPane from './RssPane.component';
+import RssPane from './RSS/RssPane.component';
 
 class Home extends Component {
   static propTypes = {
-    mobile: PropTypes.bool
+    mobile: PropTypes.bool,
+    rss: PropTypes.object
   }
   state = {
     mobileView: true
@@ -23,6 +24,7 @@ class Home extends Component {
   }
   render () {
     const {mobileView} = this.state;
+    const {rss = {}} = this.props;
     return (
       <div style={styles.container}>
         <div style={styles.header}>
@@ -30,9 +32,9 @@ class Home extends Component {
         </div>
         <div style={styles.dashboardContainer}>
           <Dashboard style={styles.dashboard} />
-          {!mobileView ? <RssPane /> : null}
+          {!mobileView ? <RssPane feed={rss.feed}/> : null}
         </div>
-        {mobileView ? <RssPane /> : null}
+        {mobileView ? <RssPane feed={rss.feed}/> : null}
       </div>
     );
   }

@@ -4,7 +4,7 @@ var FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 var definePlugin = new webpack.DefinePlugin({
   'process.env.NODE_ENV': JSON.stringify('development')
 });
-var globalHMRPlugin = new webpack.HotModuleReplacementPlugin();
+// var globalHMRPlugin = new webpack.HotModuleReplacementPlugin();
 var readableHMRUpdatesPlugin = new webpack.NamedModulesPlugin();
 var friendlyErrorMessagePlugin = new FriendlyErrorsWebpackPlugin();
 var devServerPort = 8090;
@@ -43,7 +43,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         use: [{
           loader: 'babel-loader',
-          options: {plugins: ['react-hot-loader/babel']}
+          options: {plugins: [/* 'react-hot-loader/babel'*/]}
         }]
       },
       {
@@ -58,7 +58,7 @@ module.exports = {
   },
   plugins: [
     definePlugin,
-    globalHMRPlugin,
+    // globalHMRPlugin,
     readableHMRUpdatesPlugin,
     friendlyErrorMessagePlugin
   ],

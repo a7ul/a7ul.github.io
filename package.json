@@ -51,6 +51,7 @@
     "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
+    "moment": "^2.18.1",
     "rc-touchable": "^1.2.2",
     "react": "16.0.0-alpha.13",
     "react-dom": "16.0.0-alpha.13",
@@ -58,7 +59,9 @@
     "react-router": "^4.1.1",
     "react-router-redux": "^5.0.0-alpha.6",
     "redux": "^3.7.0",
+    "redux-actions": "^2.2.1",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "rss-parser-browser": "^2.2.2"
   }
 }
