@@ -7,7 +7,8 @@ export default {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     height: '100vh',
-    width: '100vw'
+    width: '100vw',
+    overflow: 'auto'
   },
   header: {
     padding: '15px 15px 0 15px'
