@@ -4,8 +4,6 @@ var FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 var definePlugin = new webpack.DefinePlugin({
   'process.env.NODE_ENV': JSON.stringify('development')
 });
-// var globalHMRPlugin = new webpack.HotModuleReplacementPlugin();
-var readableHMRUpdatesPlugin = new webpack.NamedModulesPlugin();
 var friendlyErrorMessagePlugin = new FriendlyErrorsWebpackPlugin();
 var devServerPort = 8090;
 
@@ -13,16 +11,10 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   context: path.resolve(__dirname, 'app'),
   entry: [
-    // 'react-hot-loader/patch',
-    // activate HMR for React
-
     'webpack-dev-server/client?http://localhost:' + devServerPort,
     // bundle the client for webpack-dev-server
     // and connect to the provided endpoint
 
-    // 'webpack/hot/only-dev-server',
-    // bundle the client for hot reloading
-    // only- means to only hot reload for successful updates
     './index.js'
     // the entry point of our app
   ],
@@ -30,7 +22,6 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'bundle'),
     publicPath: '/',
-    // necessary for HMR to know where to load the hot update chunks
     sourceMapFilename: 'bundle.js.map'
   },
   resolve: {
@@ -42,8 +33,7 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         use: [{
-          loader: 'babel-loader',
-          options: {plugins: [/* 'react-hot-loader/babel'*/]}
+          loader: 'babel-loader'
         }]
       },
       {
@@ -58,8 +48,6 @@ module.exports = {
   },
   plugins: [
     definePlugin,
-    // globalHMRPlugin,
-    readableHMRUpdatesPlugin,
     friendlyErrorMessagePlugin
   ],
   target: 'web',

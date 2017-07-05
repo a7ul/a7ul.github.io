@@ -1,11 +1,34 @@
 var webpack = require('webpack');
 var path = require('path');
+var CompressionPlugin = require('compression-webpack-plugin');
+
 var definePlugin = new webpack.DefinePlugin({
   'process.env.NODE_ENV': JSON.stringify('production')
 });
+var webpackCompressionPlugin = new CompressionPlugin({
+  asset: '[path].gz[query]',
+  algorithm: 'gzip',
+  test: /\.js$|\.css$|\.html$/,
+  threshold: 10240,
+  minRatio: 0
+});
+var uglifyPlugin = new webpack.optimize.UglifyJsPlugin({
+  mangle: true,
+  compress: {
+    warnings: false, // Suppress uglification warnings
+    pure_getters: true,
+    unsafe: true,
+    unsafe_comps: true,
+    screw_ie8: true
+  },
+  output: {
+    comments: false,
+  },
+  exclude: [/\.min\.js$/gi] // skip pre-minified libs
+});
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: false,
   context: path.resolve(__dirname, 'app'),
   entry: [
     './index.js'
@@ -40,7 +63,7 @@ module.exports = {
     noParse: [/ws\/lib/]
   },
   plugins: [
-    definePlugin
+    definePlugin, uglifyPlugin, webpackCompressionPlugin
   ],
   target: 'web'
 };
