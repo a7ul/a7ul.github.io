@@ -15,7 +15,7 @@
     "lint": "echo 'Running eslint' && eslint app/",
     "lint:fix": "npm run lint -- --fix",
     "seperator:util": "======================== UTILITY SCRIPTS =======================================",
-    "prepare:dev": "cp index.html bundle/index.html && rexreplace 'bundle/' '' bundle/index.html",
+    "prepare:dev": "mkdir -p bundle && cp index.html bundle/index.html && rexreplace 'bundle/' '' bundle/index.html",
     "compile:dev": "npm run prepare:dev && NODE_ENV='development' webpack-dev-server --progress --config webpack.config.dev.js",
     "compile:prod": "NODE_ENV='production' webpack -p --config webpack.config.prod.js"
   },
