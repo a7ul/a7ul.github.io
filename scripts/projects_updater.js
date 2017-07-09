@@ -107,5 +107,6 @@ Promise.all(
     _getAllProjects('contributedRepositories').then((data) => _writeJSON('contributions.json', JSON.stringify(data)))
   ]
 ).then((filepaths) => console.log('updated files', filepaths)).catch((err) => {
-  throw err; // so that the job exits with non 0 exit code
+  console.log(err);
+  process.exit(-1);
 });
