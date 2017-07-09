@@ -1,0 +1,12 @@
+language: node_js
+
+before_install:
+  - nvm install 6.9.5
+  - node --version
+  - nvm use 6.9.5
+  - npm install -g yarn
+
+script: bash ./scripts/build.sh
+env:
+  global:
+  - ENCRYPTION_LABEL: "9290ac03541c"
