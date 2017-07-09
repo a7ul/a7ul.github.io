@@ -1,8 +1,12 @@
 var rp = require('request-promise');
 var result = require('lodash/result');
 var each = require('lodash/each');
+var fs = require('fs');
+var path = require('path');
 
-const GITHUB_API_V4_READ_TOKEN = '';
+var args = process.argv.slice(2);
+
+const GITHUB_API_V4_READ_TOKEN = args[0];
 
 const _githubFetcher = (query) => {
   const requestBody = {query};
@@ -81,7 +85,13 @@ const _getMergedRepositoryInfo = (resultArray = [], repositoryType) => {
   return nodes;
 };
 
-const getAllProjects = (repositoryType) => {
+const _writeJSON = (filename, data) => {
+  const filePath = path.resolve(__dirname, '../app/assets/json', filename);
+  fs.writeFileSync(filePath, data);
+  return filePath;
+};
+
+const _getAllProjects = (repositoryType) => {
   const queryResult = [];
   const queryParam = {
     totalResults: 100,
@@ -91,5 +101,11 @@ const getAllProjects = (repositoryType) => {
     then((data) => _getMergedRepositoryInfo(data, repositoryType));
 };
 
-getAllProjects('repositories').then((data) => console.log('repos', data.length)).catch(console.log);
-getAllProjects('contributedRepositories').then((data) => console.log('contributedRepositories', data.length));
+Promise.all(
+  [
+    _getAllProjects('repositories').then((data) => _writeJSON('projects.json', JSON.stringify(data))),
+    _getAllProjects('contributedRepositories').then((data) => _writeJSON('contributions.json', JSON.stringify(data)))
+  ]
+).then((filepaths) => console.log('updated files', filepaths)).catch((err) => {
+  throw err; // so that the job exits with non 0 exit code
+});
