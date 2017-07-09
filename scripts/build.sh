@@ -6,6 +6,7 @@ TARGET_BRANCH="test"
 GITHUB_API_V4_READ_TOKEN=""
 
 function updateProjects {
+  yarn install &&
   node scripts/projects_updater.js ${GITHUB_API_V4_READ_TOKEN} &&
   yarn build
 }
