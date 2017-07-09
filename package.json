@@ -63,6 +63,8 @@
     "redux-actions": "^2.2.1",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
     "rss-parser-browser": "^2.2.2"
   }
 }

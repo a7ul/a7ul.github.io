@@ -1,4 +1,4 @@
-import bg from '../../assets/bgg.jpg';
+import bg from '../../assets/bg.jpg';
 import logo from '../../assets/logo.png';
 export default {
   container: {
