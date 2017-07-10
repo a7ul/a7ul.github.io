@@ -11,11 +11,9 @@ addons:
       - g++-4.8
 
 before_install:
+  - git fetch --unshallow --tags
   - node --version
   - npm install -g yarn
-
-install:
-  - git fetch --unshallow --tags
 
 script: bash ./scripts/build.sh
 env:
