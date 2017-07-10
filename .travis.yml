@@ -14,6 +14,9 @@ before_install:
   - node --version
   - npm install -g yarn
 
+install:
+  - git fetch --unshallow --tags
+
 script: bash ./scripts/build.sh
 env:
   global:

@@ -17,7 +17,6 @@ SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 git config user.name "Atul R"
 git config user.email "atulanand94@gmail.com"
 
-git fetch
 git checkout $SOURCE_BRANCH
 
 updateProjects
