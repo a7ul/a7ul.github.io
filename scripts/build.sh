@@ -53,10 +53,13 @@ git clean -fd
 
 git checkout $TARGET_BRANCH
 cd ..
+echo "removing old dist"
 rm -rf ./master-atul.github.io/**
 cd master-atul.github.io
+echo "copying new dist"
 cp -rf ../portfolio_dist/* .
-
+echo "current directory ${pwd}"
+ls ../portfolio_dist
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if git diff --quiet; then
