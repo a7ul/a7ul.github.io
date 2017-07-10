@@ -61,14 +61,6 @@ cp -rf ../portfolio_dist/* .
 echo "current directory ${pwd}"
 ls ../portfolio_dist
 
-# If there are no changes to the compiled out (e.g. this is a README update) then just bail.
-if git diff --quiet; then
-    echo "No changes to the output on this push; exiting."
-    exit 0
-fi
-
-# Commit the "changes", i.e. the new version.
-# The delta will show diffs between new and old versions.
 git add -A .
 git commit -m "Commit new bundle to ${TARGET_BRANCH}"
 
