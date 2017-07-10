@@ -14,19 +14,20 @@ function updateProjects {
 REPO="https://github.com/master-atul/master-atul.github.io.git"
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 
-git clone $REPO project
-cd project
 git checkout $SOURCE_BRANCH
 
 updateProjects
 
-cp -rf bundle ../project_dist
+cp -rf bundle ../portfolio_dist
+
+git stash
+git clean -fd
 
 git checkout $TARGET_BRANCH
 cd ..
-rm -rf project/**
-cd project
-cp -rf ../project_dist/* .
+rm -rf ./master-atul.github.io/**
+cd master-atul.github.io
+cp -rf ../portfolio_dist/* .
 
 git config user.name "Atul R"
 git config user.email "atulanand94@gmail.com"
@@ -40,7 +41,7 @@ fi
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
 git add -A .
-git commit -m "Commit new bundle to master"
+git commit -m "Commit new bundle to ${TARGET_BRANCH}"
 
 git checkout $SOURCE_BRANCH
 
