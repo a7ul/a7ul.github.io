@@ -11,8 +11,6 @@ addons:
       - g++-4.8
 
 before_install:
-  - git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
-  - git fetch --tags
   - node --version
   - npm install -g yarn
 
