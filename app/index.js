@@ -6,7 +6,7 @@ import {initStore} from './state/store';
 import contributions from './assets/json/contributions.json';
 import projects from './assets/json/projects.json';
 
-console.log('contributions, projects', contributions, projects);
+console.log('to test,contributions, projects', contributions, projects);
 
 const store = initStore({});
 
