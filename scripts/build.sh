@@ -14,6 +14,9 @@ function updateProjects {
 REPO="https://github.com/master-atul/master-atul.github.io.git"
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 
+git config user.name "Atul R"
+git config user.email "atulanand94@gmail.com"
+
 git checkout $SOURCE_BRANCH
 
 updateProjects
@@ -29,8 +32,6 @@ rm -rf ./master-atul.github.io/**
 cd master-atul.github.io
 cp -rf ../portfolio_dist/* .
 
-git config user.name "Atul R"
-git config user.email "atulanand94@gmail.com"
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if git diff --quiet; then
