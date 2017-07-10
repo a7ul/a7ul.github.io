@@ -1,18 +1,14 @@
-import Router from './routes/router';
-import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
+import React from 'react';
+import AppContainer from './App.container';
 import {initStore} from './state/store';
-import contributions from './assets/json/contributions.json';
-import projects from './assets/json/projects.json';
-
-console.log('to test,contributions, projects', contributions, projects);
+import {Provider} from 'react-redux';
 
 const store = initStore({});
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router />
+    <AppContainer />
   </Provider>,
   document.getElementById('root')
 );

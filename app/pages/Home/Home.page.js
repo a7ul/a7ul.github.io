@@ -9,7 +9,8 @@ import PropTypes from 'prop-types';
 class HomePage extends Component {
   static propTypes = {
     updateRSS: PropTypes.func,
-    rss: PropTypes.object
+    rss: PropTypes.object,
+    isMobileView: PropTypes.bool
   }
   componentDidMount () {
     const {updateRSS} = this.props;
@@ -22,16 +23,16 @@ class HomePage extends Component {
     });
   }
   render () {
-    const {rss} = this.props;
-    const mobileMQ = window.matchMedia('(max-width: 800px)');
+    const {rss, isMobileView} = this.props;
     return (
-      <HomeView rss={rss} mobile={mobileMQ.matches}/>
+      <HomeView rss={rss} isMobileView={isMobileView}/>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  rss: result(state, 'rss', {})
+  rss: result(state, 'rss', {}),
+  isMobileView: result(state, 'isMobileView', false)
 });
 
 const mapDispatchToProps = (dispatch) => ({
