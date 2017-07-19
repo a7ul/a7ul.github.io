@@ -11,14 +11,13 @@ class Dashboard extends Component {
             Hi, I&lsquo;m <span style={styles.name}>Atul</span>
           </p>
           <p style={styles.subtitle}>
-           Web, Mobile, Robotics, IOT and VR
+           Developer <span style={styles.dot}>.</span> Maker <span style={styles.dot}>.</span> Blogger
           </p>
-          <p style={styles.subsubtitle}>
-            Full stack developer
-          </p>
+
           <img style={styles.dp} src='http://gravatar.com/avatar/2587bdb445fa0d21638afcbf59a36e1d?s=200' />
         </div>
         <Links />
+        <div style={styles.workTilesContainer} />
       </div>
     );
   }

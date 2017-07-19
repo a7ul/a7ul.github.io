@@ -18,7 +18,6 @@ class Home extends Component {
         <div style={styles.header}>
           <div style={styles.logo} />
         </div>
-        <ProjectTile name='ImShow-Java-OpenCV' imgUrl={null} topics={['yo', 'java', 'opencv']} url='http://google.com' forkCount={3} starCount={4} description='an alternative to imshow() in C++ OpenCV for Java OpenCV' />
         <div style={styles.dashboardContainer}>
           <Dashboard style={styles.dashboard} />
           {!isMobileView ? <RssPane feed={rss.feed}/> : null}
@@ -28,5 +27,7 @@ class Home extends Component {
     );
   }
 }
+
+// <ProjectTile name='ImShow-Java-OpenCV' imgUrl={null} topics={['yo', 'java', 'opencv']} url='http://google.com' forkCount={3} starCount={4} description='an alternative to imshow() in C++ OpenCV for Java OpenCV' />
 
 export default Home;

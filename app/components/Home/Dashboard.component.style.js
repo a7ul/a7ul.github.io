@@ -1,3 +1,4 @@
+
 export default {
   container: {
     flex: 1,
@@ -19,13 +20,12 @@ export default {
     color: 'black'
   },
   subtitle: {
-    padding: '10px 20px 0 20px',
+    padding: '5px 20px 20px 20px',
+    fontWeight: 600,
     fontSize: 15
   },
-  subsubtitle: {
-    padding: '5px 20px 20px 20px',
-    fontSize: 15,
-    fontWeight: 600
+  dot: {
+    color: 'rgba(255, 255, 255, 0.7)'
   },
   dp: {
     width: 130,
