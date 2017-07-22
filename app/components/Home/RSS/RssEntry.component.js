@@ -17,14 +17,17 @@ class RssEntry extends Component {
     return (
       <div style={styles.container} >
         <a href={link} rel='noopener noreferrer' target='_blank' >
-          <p style={styles.title}>
-            {title}
-          </p>
+          <div>
+            <p style={styles.bullet}>&#10021;</p>
+            <p style={styles.title}>
+              {title}
+            </p>
+          </div>
           <div style={styles.date}>
             {dateFormatter(date)}
             <div style={styles.categories}>
               {
-                categories.map((eachCategory, i) => <div style={styles.categoryItem} key={i}>{eachCategory}</div>)
+                categories.map((eachCategory, i) => <div style={styles.categoryItem} key={i}>#{eachCategory}</div>)
               }
             </div>
           </div>

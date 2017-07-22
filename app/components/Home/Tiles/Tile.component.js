@@ -27,7 +27,7 @@ class Tiles extends Component {
     }
   }
   render () {
-    const {goTo, icon, title, contentStyle, iconAlign = 'center', bgColor, count = 23} = this.props;
+    const {goTo, icon, title, contentStyle, iconAlign = 'center', bgColor, count = 0} = this.props;
 
     console.log(goTo);
     return (

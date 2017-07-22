@@ -2,12 +2,17 @@ import theme from '../../../style/theme';
 
 export default {
   container: {
-    padding: '10px 0'
+    padding: '8px 0'
   },
   title: {
     fontWeight: 400,
     color: theme.linkedInBlue,
-
+    display: 'inline-block'
+  },
+  bullet: {
+    display: 'inline',
+    paddingRight: 5,
+    color: theme.tileRed
   },
   date: {
     padding: '2px 0',
@@ -29,7 +34,6 @@ export default {
     padding: 5,
     color: 'black',
     fontSize: 12,
-    borderRadius: 10,
-    border: '1px solid'
+    fontWeight: 700
   }
 };

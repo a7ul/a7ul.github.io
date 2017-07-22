@@ -35,7 +35,7 @@ export default {
     justifyContent: 'center'
   },
   tileWrapper: {
-    padding: '20px 5px',
+    padding: '15px 5px',
     textAlign: 'center'
   },
   iconCount: {

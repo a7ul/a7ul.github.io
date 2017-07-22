@@ -11,7 +11,7 @@ export default {
     cursor: 'pointer'
   },
   link: {
-    background: 'rgba(255, 255, 255, 0.29)',
+    background: 'white',
     borderRadius: 20,
     overflow: 'no-scroll'
   },
