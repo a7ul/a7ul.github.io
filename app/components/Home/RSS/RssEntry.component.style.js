@@ -1,15 +1,19 @@
+import theme from '../../../style/theme';
+
 export default {
   container: {
     padding: '10px 0'
   },
   title: {
-    fontWeight: 300,
-    color: 'white'
+    fontWeight: 400,
+    color: theme.linkedInBlue,
+
   },
   date: {
     padding: '2px 0',
     display: 'inline-block',
-    fontSize: 12
+    fontSize: 12,
+    color: theme.tileGreen
   },
   content: {
     paddingTop: 10,

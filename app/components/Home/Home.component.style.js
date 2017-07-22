@@ -1,7 +1,9 @@
 import logo from '../../assets/logo.png';
+import theme from '../../style/theme';
+
 export default {
   container: {
-    backgroundColor: '#59A9C2',
+    backgroundColor: theme.backgroundWhite,
     height: '100vh',
     width: '100vw',
     overflow: 'auto'

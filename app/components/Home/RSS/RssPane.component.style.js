@@ -1,11 +1,13 @@
+import theme from '../../../style/theme';
+
 export default {
   container: {
     flex: 1,
-    padding: '0 30px 20px 30px',
+    padding: '0 15px 10px 15px'
   },
   blogTitle: {
-    fontWeight: 700,
-    padding: '10px 10px 10px 10px',
+    fontWeight: 400,
+    padding: '0 10px 10px 10px',
     textAlign: 'center'
   },
   blogLink: {
@@ -16,8 +18,13 @@ export default {
     fontWeight: 800,
     border: '1px solid black'
   },
+  rssWrapper: {
+    boxShadow: 'lightGrey 0 0 10px',
+    backgroundColor: 'white',
+    padding: 15
+  },
   nextTick: {
     paddingLeft: 10,
-    color: 'white'
+    color: theme.tileGreen
   }
 };

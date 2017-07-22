@@ -1,3 +1,4 @@
+import theme from '../../../style/theme';
 
 export default {
   container: {
@@ -13,7 +14,7 @@ export default {
     fontSize: 30,
     fontWeight: 200,
     padding: 10,
-    color: 'white'
+    color: theme.tileGreen
   },
   name: {
     fontWeight: 600,
@@ -25,10 +26,11 @@ export default {
     fontSize: 15
   },
   dot: {
-    color: 'rgba(255, 255, 255, 0.7)'
+    color: theme.tileRed
   },
   dp: {
     width: 130,
-    borderRadius: 80
+    borderRadius: 80,
+    boxShadow: 'lightgrey -1px 4px 3px'
   }
 };
