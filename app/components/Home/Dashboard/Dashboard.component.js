@@ -17,7 +17,6 @@ class Dashboard extends Component {
           <img style={styles.dp} src='http://gravatar.com/avatar/2587bdb445fa0d21638afcbf59a36e1d?s=200' />
         </div>
         <Links />
-        <div style={styles.workTilesContainer} />
       </div>
     );
   }

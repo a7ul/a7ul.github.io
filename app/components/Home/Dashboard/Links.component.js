@@ -1,4 +1,4 @@
-import Icon from '../Icon/Icon.component';
+import Icon from '../../Icon/Icon.component';
 import Touchable from 'rc-touchable';
 import React, {Component} from 'react';
 import styles from './Links.component.style';

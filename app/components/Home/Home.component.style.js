@@ -16,12 +16,8 @@ export default {
     height: 30,
     width: 30
   },
-  dashboardContainer: {
+  sectionContainer: {
     display: 'flex',
     paddingBottom: 10
-  },
-  dashboard: {
-    display: 'flex',
-    flex: 1
   }
 };

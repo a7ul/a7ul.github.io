@@ -1,1 +1,1 @@
-export const mobileMQ = window.matchMedia('(max-width: 800px)');
+export const mobileMQ = window.matchMedia('(max-width: 600px)');
