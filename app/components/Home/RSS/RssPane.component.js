@@ -15,8 +15,8 @@ class RssPane extends Component {
     const {feed = {}} = this.props;
     return (
       <div style={styles.container} >
+        <p style={styles.blogTitle}>RECENT BLOGS</p>
         <div style={styles.rssWrapper}>
-          <p style={styles.blogTitle}>Recent Blogs</p>
           {
             this.getLastFewfeedEnteries(feed).map((entry, i) => {
               const {link, title, isoDate, contentSnippet = '', categories = []} = entry;

@@ -5,9 +5,12 @@ export default {
     flex: 1
   },
   blogTitle: {
-    fontWeight: 400,
-    padding: '0 10px 10px 10px',
-    textAlign: 'center'
+    fontWeight: 600,
+    padding: '10px 0',
+    textAlign: 'center',
+    color: 'white',
+    fontSize: 14,
+    background: theme.tileGreen
   },
   blogLink: {
     display: 'inline-block',
@@ -20,7 +23,7 @@ export default {
   rssWrapper: {
     boxShadow: 'lightGrey 0 0 10px',
     backgroundColor: 'white',
-    padding: 15
+    padding: '0 15px 15px 15px'
   },
   nextTick: {
     paddingLeft: 10,

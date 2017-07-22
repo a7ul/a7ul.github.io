@@ -20,7 +20,7 @@ export default {
   },
   spacing: {
     display: 'flex',
-    paddingRight: 10
+    paddingRight: 20
   },
   sectionContainer: {
     padding: '0 15px 20px',
