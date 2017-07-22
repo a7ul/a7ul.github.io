@@ -7,7 +7,7 @@ export default {
     justifyContent: 'center'
   },
   linkContainer: {
-    padding: '10px 5px 10px 5px',
+    padding: '10px 0',
     cursor: 'pointer'
   },
   link: {

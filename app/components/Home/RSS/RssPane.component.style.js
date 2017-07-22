@@ -2,8 +2,7 @@ import theme from '../../../style/theme';
 
 export default {
   container: {
-    flex: 1,
-    padding: '0 15px 10px 15px'
+    flex: 1
   },
   blogTitle: {
     fontWeight: 400,

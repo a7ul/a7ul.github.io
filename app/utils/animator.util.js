@@ -7,6 +7,7 @@ export const initializeAnimator = (dom) => {
   // Add the canvas to the HTML document
   renderer.view.style.border = '1px dashed black';
   renderer.autoResize = true;
+  renderer.resize(dom.offsetWidth, dom.offsetHeight);
   dom.appendChild(renderer.view);
   // Create a container object called the `stage`
   const stage = new Container();

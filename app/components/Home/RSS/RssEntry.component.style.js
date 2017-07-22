@@ -7,7 +7,7 @@ export default {
   title: {
     fontWeight: 400,
     color: theme.linkedInBlue,
-    display: 'inline-block'
+    display: 'inline'
   },
   bullet: {
     display: 'inline',

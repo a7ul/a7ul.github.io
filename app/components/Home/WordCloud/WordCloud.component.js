@@ -1,28 +1,21 @@
 import React, {Component} from 'react';
 import styles from './WordCloud.component.style';
 import PropTypes from 'prop-types';
-import {initializeAnimator, getRenderer} from '../../../utils/animator.util';
+import {initializeAnimator} from '../../../utils/animator.util';
 
 class WordCloud extends Component {
   static propTypes= {
     isMobileView: PropTypes.bool
   }
-
+  
   componentDidMount () {
-    // const dom = this.wordCloudContainer;
-    // const renderer = initializeAnimator(dom);
-    // renderer.resize(dom.offsetWidth, dom.offsetWidth);
+    const dom = document.getElementById('word-cloud-container');
+    initializeAnimator(dom);
   }
-  assignRef = (ref) => this.wordCloudContainer = ref
 
   render () {
-    // const renderer = getRenderer();
-    // const dom = this.wordCloudContainer;
-    // dom && renderer.resize(dom.offsetWidth, dom.offsetWidth);
     return (
-      <div style={styles.container}>
-        <div ref={this.assignRef} style={styles.canvasContainer}/>
-      </div>
+      <div id='word-cloud-container' style={styles.canvasContainer}/>
     );
   }
 }

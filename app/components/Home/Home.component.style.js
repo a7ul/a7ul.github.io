@@ -18,8 +18,14 @@ export default {
     height: 30,
     width: 30
   },
-  sectionContainer: {
+  spacing: {
     display: 'flex',
-    paddingBottom: 10
+    paddingRight: 10
+  },
+  sectionContainer: {
+    padding: '0 15px 20px',
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row'
   }
 };

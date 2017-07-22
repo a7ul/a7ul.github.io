@@ -23,12 +23,17 @@ class Home extends Component {
           <Dashboard isMobileView={isMobileView}/>
           {!isMobileView ? <WordCloud isMobileView={isMobileView}/> : null}
         </div>
-        {isMobileView ? <WordCloud isMobileView={isMobileView}/> : null}
+        {isMobileView ? <div style={styles.sectionContainer}>
+          <WordCloud isMobileView={isMobileView}/>
+        </div> : null}
         <div style={styles.sectionContainer}>
           <TileBoard />
+          {!isMobileView ? <div style={styles.spacing} /> : null}
           {!isMobileView ? <RssPane feed={rss.feed} /> : null }
         </div>
-        {isMobileView ? <RssPane feed={rss.feed} /> : null}
+        {isMobileView ? <div style={styles.sectionContainer}>
+          <RssPane feed={rss.feed} />
+        </div> : null}
       </div>
     );
   }
