@@ -21,6 +21,7 @@ class Home extends Component {
         </div>
         <div style={styles.sectionContainer}>
           <Dashboard isMobileView={isMobileView}/>
+          {!isMobileView ? <div style={styles.spacing} /> : null}
           {!isMobileView ? <WordCloud isMobileView={isMobileView}/> : null}
         </div>
         {isMobileView ? <div style={styles.sectionContainer}>

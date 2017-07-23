@@ -2716,6 +2716,10 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
+matter-js@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/matter-js/-/matter-js-0.13.0.tgz#c13025a76288fad813c747498dc445616253b3f5"
+
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"

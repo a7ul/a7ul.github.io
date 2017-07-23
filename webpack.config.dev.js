@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   context: path.resolve(__dirname, 'app'),
   entry: [
-    'webpack-dev-server/client?http://localhost:' + devServerPort,
+    'webpack-dev-server/client?http://192.168.1.101:' + devServerPort,
     // bundle the client for webpack-dev-server
     // and connect to the provided endpoint
 
@@ -53,6 +53,7 @@ module.exports = {
   target: 'web',
   devServer: {
     port: devServerPort,
+    host: '192.168.1.101',
     quiet: true, // This is because we are using another friendlyErrorMessagePlugin
     contentBase: path.resolve(__dirname, 'bundle'),
     // match the output path

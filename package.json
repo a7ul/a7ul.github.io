@@ -52,6 +52,7 @@
     "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
+    "matter-js": "^0.13.0",
     "moment": "^2.18.1",
     "pixi.js": "^4.5.3",
     "rc-touchable": "^1.2.2",
