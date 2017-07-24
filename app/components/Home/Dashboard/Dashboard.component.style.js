@@ -3,7 +3,8 @@ import theme from '../../../style/theme';
 export default {
   container: {
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    minHeight: 310
   },
   dashboard: {
     flex: 1,

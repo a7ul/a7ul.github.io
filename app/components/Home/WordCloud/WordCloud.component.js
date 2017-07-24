@@ -18,8 +18,8 @@ class WordCloud extends Component {
   render () {
     return (
       <div style={styles.container}>
+        <p style={styles.title}>TOPICS THAT INTEREST ME</p>
         <div id='word-cloud-container' style={styles.canvasContainer}/>
-        <p style={styles.title}>⇡ TOPICS THAT INTEREST ME ⇡</p>
       </div>
     );
   }

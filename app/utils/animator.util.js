@@ -1,6 +1,6 @@
 import theme from '../style/theme';
 
-import PIXI, {autoDetectRenderer as PIXIAutoDetectRenderer, Container as PIXIContainer, Text as PIXIText} from 'pixi.js';
+import {autoDetectRenderer as PIXIAutoDetectRenderer, Container as PIXIContainer, Text as PIXIText} from 'pixi.js';
 import {Engine as MatterEngine, MouseConstraint, Mouse, World as MatterWorld, Bodies as MatterBodies} from 'matter-js';
 
 const knows = ['Java', 'Android', 'Robotics', 'IOT', 'VR', 'AR', 'Javascript', 'HTML5', 'Python', 'OpenCV', 'React', 'React Native', 'Angular 1.x', 'ES6', 'CI/CD', '3D Modelling'];
@@ -12,6 +12,7 @@ const textListGenerator = (texts = [], center = 100) => {
     sprite.scale.x = 0.7;
     sprite.scale.y = 0.7;
     sprite.style.fill = colorArray[i % 5];
+    sprite.style['pointer-events'] = 'all';
     return {
       sprite,
       physics: MatterBodies.rectangle(center - Math.random() * 100, 0, sprite.width + 5, sprite.height + 5)
@@ -56,13 +57,10 @@ export const initializeAnimator = (dom) => {
   const renderer = PIXIAutoDetectRenderer(dom.offsetWidth, dom.offsetHeight,
     {antialias: true, transparent: true, resolution: 1, preserveDrawingBuffer: true});
   renderer.autoResize = true;
-  renderer.plugins.interaction.onPointerDown = () => {
 
-  };
-  console.log(renderer);
-  // renderer.plugins.interaction.destroy();
-  // renderer.plugins.interaction = new PIXI.interaction.InteractionManager(renderer, {autoPreventDefault: false});
   dom.appendChild(renderer.view);
+  renderer.view.style['pointer-events'] = 'all';
+
   const physicsEngine = createPhysicsWorld(renderer.view);
   return {renderer, physicsEngine};
 };
