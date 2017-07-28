@@ -1,21 +1,19 @@
 import theme from '../style/theme';
+import strengths from '../assets/json/strengths.json';
 
 import {autoDetectRenderer as PIXIAutoDetectRenderer, Container as PIXIContainer, Text as PIXIText} from 'pixi.js';
 import {Engine as MatterEngine, MouseConstraint, Mouse, World as MatterWorld, Bodies as MatterBodies} from 'matter-js';
 
-const knows = ['Java', 'Android', 'Robotics', 'IOT', 'VR', 'AR', 'Javascript', 'HTML5', 'Python', 'OpenCV', 'React', 'React Native', 'Angular 1.x', 'ES6', 'CI/CD', '3D Modelling'];
-
-const textListGenerator = (texts = [], center = 100) => {
-  const colorArray = [theme.tileBlue, theme.tileRed, theme.tileGreen, theme.tileYellow, theme.linkedInBlue];
-  const gameTexts = texts.map((eachText, i) => {
-    const sprite = new PIXIText(eachText);
-    sprite.scale.x = 0.7;
-    sprite.scale.y = 0.7;
+const textListGenerator = (knowList = [], center = 100) => {
+  const colorArray = [theme.tileBlue, theme.tileGreen, theme.tileYellow, theme.linkedInBlue];
+  const gameTexts = knowList.map((eachKnow, i) => {
+    const sprite = new PIXIText(eachKnow.text);
+    sprite.scale.x = 0.4 + eachKnow.strength * 0.15;
+    sprite.scale.y =  0.4 + eachKnow.strength * 0.15;
     sprite.style.fill = colorArray[i % 5];
-    sprite.style['pointer-events'] = 'all';
     return {
       sprite,
-      physics: MatterBodies.rectangle(center - Math.random() * 100, 0, sprite.width + 5, sprite.height + 5)
+      physics: MatterBodies.rectangle(center - Math.random() * 100, 0 + eachKnow.strength, sprite.width, sprite.height)
     };
   });
   return gameTexts;
@@ -57,17 +55,14 @@ export const initializeAnimator = (dom) => {
   const renderer = PIXIAutoDetectRenderer(dom.offsetWidth, dom.offsetHeight,
     {antialias: true, transparent: true, resolution: 1, preserveDrawingBuffer: true});
   renderer.autoResize = true;
-
   dom.appendChild(renderer.view);
-  renderer.view.style['pointer-events'] = 'all';
-
   const physicsEngine = createPhysicsWorld(renderer.view);
   return {renderer, physicsEngine};
 };
 
 export const addTextsToGame = (physicsEngine, renderer) => {
   const center = renderer.width / 2;
-  const textList = textListGenerator(knows, center);
+  const textList = textListGenerator(strengths, center);
   textList.forEach((eachTextList) => {
     MatterWorld.add(physicsEngine.world, [eachTextList.physics]);
   });

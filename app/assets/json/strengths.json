@@ -1,0 +1,49 @@
+[{
+  "strength": 2,
+  "text": "Java"
+}, {
+  "strength": 2,
+  "text": "Android"
+}, {
+  "strength": 1,
+  "text": "Virtual Reality"
+}, {
+  "strength": 2,
+  "text": "Robotics"
+}, {
+  "strength": 1,
+  "text": "IOT"
+}, {
+  "strength": 1,
+  "text": "AR"
+}, {
+  "strength": 4,
+  "text": "Javascript"
+}, {
+  "strength": 4,
+  "text": "HTML5"
+}, {
+  "strength": 2,
+  "text": "Python"
+}, {
+  "strength": 2,
+  "text": "OpenCV"
+}, {
+  "strength": 4,
+  "text": "React"
+}, {
+  "strength": 4,
+  "text": "React Native"
+}, {
+  "strength": 2,
+  "text": "Angular 1.x"
+}, {
+  "strength": 4,
+  "text": "ES6"
+}, {
+  "strength": 1,
+  "text": "CI/CD"
+}, {
+  "strength": 1,
+  "text": "3D Modelling"
+}]
