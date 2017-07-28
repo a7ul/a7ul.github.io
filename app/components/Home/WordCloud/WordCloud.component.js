@@ -11,7 +11,7 @@ class WordCloud extends Component {
   componentDidMount () {
     const dom = document.getElementById('word-cloud-container');
     const {renderer, gameAssets} = initializeAnimator(dom);
-    gameLoop(renderer, gameAssets.gameTexts);
+    gameLoop(renderer, gameAssets);
   }
 
   render () {
