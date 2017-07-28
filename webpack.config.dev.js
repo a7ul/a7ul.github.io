@@ -4,6 +4,9 @@ var FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 var definePlugin = new webpack.DefinePlugin({
   'process.env.NODE_ENV': JSON.stringify('development')
 });
+
+var globalHMRPlugin = new webpack.HotModuleReplacementPlugin();
+var readableHMRUpdatesPlugin = new webpack.NamedModulesPlugin();
 var friendlyErrorMessagePlugin = new FriendlyErrorsWebpackPlugin();
 var devServerPort = 8090;
 
@@ -11,10 +14,9 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   context: path.resolve(__dirname, 'app'),
   entry: [
+    'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:' + devServerPort,
-    // bundle the client for webpack-dev-server
-    // and connect to the provided endpoint
-
+    'webpack/hot/only-dev-server',
     './index.js'
     // the entry point of our app
   ],
@@ -33,7 +35,8 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         use: [{
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {plugins: ['react-hot-loader/babel']}
         }]
       },
       {
@@ -48,12 +51,13 @@ module.exports = {
   },
   plugins: [
     definePlugin,
+    globalHMRPlugin,
+    readableHMRUpdatesPlugin,
     friendlyErrorMessagePlugin
   ],
   target: 'web',
   devServer: {
     port: devServerPort,
-    host: 'localhost',
     quiet: true, // This is because we are using another friendlyErrorMessagePlugin
     contentBase: path.resolve(__dirname, 'bundle'),
     // match the output path

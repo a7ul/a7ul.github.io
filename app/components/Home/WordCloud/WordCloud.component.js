@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styles from './WordCloud.component.style';
 import PropTypes from 'prop-types';
-import {initializeAnimator, gameLoop, addTextsToGame} from '../../../utils/animator.util';
+import {initializeAnimator, gameLoop} from '../../../utils/animator.util';
 
 class WordCloud extends Component {
   static propTypes= {
@@ -10,9 +10,8 @@ class WordCloud extends Component {
 
   componentDidMount () {
     const dom = document.getElementById('word-cloud-container');
-    const {renderer, physicsEngine} = initializeAnimator(dom);
-    const textList = addTextsToGame(physicsEngine, renderer);
-    gameLoop(renderer, physicsEngine, textList);
+    const {renderer, gameAssets} = initializeAnimator(dom);
+    gameLoop(renderer, gameAssets.gameTexts);
   }
 
   render () {
