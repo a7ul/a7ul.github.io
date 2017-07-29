@@ -43,15 +43,18 @@ Example:
   }
 ******************************************************************************/
 
-const GrowingPacker = function () { };
+const GrowingPacker = function (width, height) {
+  this.init(width, height);
+};
 
 GrowingPacker.prototype = {
-
+  init: function (width, height) {
+    const aspectRatio = width / height;
+    this.aspectRatio = (aspectRatio > 1) ? (width / height) : (height / width);
+    this.root = {x: 0, y: 0, width: width, height: height};
+  },
   fit: function (blocks) {
     let n, node, block, len = blocks.length;
-    const width = len > 0 ? blocks[0].width : 0;
-    const height = len > 0 ? blocks[0].height : 0;
-    this.root = {x: 0, y: 0, width: width, height: height};
     for (n = 0; n < len; n++) {
       block = blocks[n];
       node = this.findNode(this.root, block.width, block.height);
@@ -82,8 +85,8 @@ GrowingPacker.prototype = {
     const canGrowDown  = (width <= this.root.width);
     const canGrowRight = (height <= this.root.height);
 
-    const shouldGrowRight = canGrowRight && (this.root.height >= (this.root.width + width)); // attempt to keep square-ish by growing right when height is much greater than width
-    const shouldGrowDown  = canGrowDown  && (this.root.width >= (this.root.height + height)); // attempt to keep square-ish by growing down  when width  is much greater than height
+    const shouldGrowRight = canGrowRight && (this.root.height * (this.aspectRatio) >= (this.root.width + width)); // attempt to keep square-ish by growing right when height is much greater than width
+    const shouldGrowDown  = canGrowDown  && (this.root.width * (1 / this.aspectRatio) >= (this.root.height + height)); // attempt to keep square-ish by growing down  when width  is much greater than height
 
     if (shouldGrowRight)
       return this.growRight(width, height);
@@ -98,14 +101,16 @@ GrowingPacker.prototype = {
   },
 
   growRight: function (width, height) {
+    const newWidth = this.root.width + width;
+    const newHeight = newWidth * (1 / this.aspectRatio);
     this.root = {
       used: true,
       x: 0,
       y: 0,
-      width: this.root.width + width,
-      height: this.root.height,
+      width: newWidth,
+      height: newHeight,
       down: this.root,
-      right: {x: this.root.width, y: 0, width: width, height: this.root.height}
+      right: {x: this.root.width, y: 0, width: width, height: newHeight}
     };
     const node = this.findNode(this.root, width, height);
     if (node)
@@ -115,13 +120,15 @@ GrowingPacker.prototype = {
   },
 
   growDown: function (width, height) {
+    const newHeight = this.root.height + height;
+    const newWidth = newHeight * this.aspectRatio;
     this.root = {
       used: true,
       x: 0,
       y: 0,
-      width: this.root.width,
-      height: this.root.height + height,
-      down: {x: 0, y: this.root.height, width: this.root.width, height: height},
+      width: newWidth,
+      height: newHeight,
+      down: {x: 0, y: this.root.height, width: newWidth, height: height},
       right: this.root
     };
     const node = this.findNode(this.root, width, height);
@@ -134,3 +141,79 @@ GrowingPacker.prototype = {
 };
 
 export default GrowingPacker;
+
+
+
+/** ****************************************************************************
+This is a very simple binary tree based bin packing algorithm that is initialized
+with a fixed width and height and will fit each block into the first node where
+it fits and then split that node into 2 parts (down and right) to track the
+remaining whitespace.
+Best results occur when the input blocks are sorted by height, or even better
+when sorted by max(width,height).
+Inputs:
+------
+  width:       width of target rectangle
+  height:      height of target rectangle
+  blocks: array of any objects that have .width and .height attributes
+Outputs:
+-------
+  marks each block that fits with a .fit attribute pointing to a
+  node with .x and .y coordinates
+Example:
+-------
+  var blocks = [
+    { width: 100, height: 100 },
+    { width: 100, height: 100 },
+    { width:  80, height:  80 },
+    { width:  80, height:  80 },
+    etc
+    etc
+  ];
+  var packer = new Packer(500, 500);
+  packer.fit(blocks);
+  for(var n = 0 ; n < blocks.length ; n++) {
+    var block = blocks[n];
+    if (block.fit) {
+      Draw(block.fit.x, block.fit.y, block.width, block.height);
+    }
+  }
+******************************************************************************/
+
+const Packer = function (width, height) {
+  this.init(width, height);
+};
+
+Packer.prototype = {
+  init: function (width, height) {
+    this.root = {x: 0, y: 0, width: width, height: height};
+  },
+
+  fit: function (blocks) {
+    var n, node, block;
+    for (n = 0; n < blocks.length; n++) {
+      block = blocks[n];
+      node = this.findNode(this.root, block.width, block.height);
+      if (node)
+        block.fit = this.splitNode(node, block.width, block.height);
+    }
+  },
+
+  findNode: function (root, width, height) {
+    if (root.used)
+      return this.findNode(root.right, width, height) || this.findNode(root.down, width, height);
+    else if ((width <= root.width) && (height <= root.height))
+      return root;
+    else
+      return null;
+  },
+
+  splitNode: function (node, width, height) {
+    node.used = true;
+    node.down  = {x: node.x, y: node.y + height, width: node.width, height: node.height - height};
+    node.right = {x: node.x + width, y: node.y,  width: node.width - width, height: height};
+    return node;
+  }
+};
+
+export const FixedSizePacker = Packer;
