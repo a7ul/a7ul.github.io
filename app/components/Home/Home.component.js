@@ -3,8 +3,7 @@ import styles from './Home.component.style';
 import Dashboard from './Dashboard/Dashboard.component';
 import PropTypes from 'prop-types';
 import RssPane from './RSS/RssPane.component';
-import WordCloud from './WordCloud/WordCloud.component';
-import TileBoard from './Tiles/TileBoard.component';
+import ProjectsBoard from './ProjectsBoard/ProjectsBoard.component';
 
 class Home extends Component {
   static propTypes = {
@@ -16,25 +15,14 @@ class Home extends Component {
     const {rss = {}, isMobileView} = this.props;
     return (
       <div style={styles.container}>
-        <div style={styles.header}>
+        <div style={styles.dashboardSection}>
           <div style={styles.logo} />
-        </div>
-        <div style={styles.sectionContainer}>
           <Dashboard isMobileView={isMobileView}/>
-          {!isMobileView ? <div style={styles.spacing} /> : null}
-          {!isMobileView ? <WordCloud isMobileView={isMobileView}/> : null}
         </div>
-        {isMobileView ? <div style={styles.sectionContainer}>
-          <WordCloud isMobileView={isMobileView}/>
-        </div> : null}
-        <div style={styles.sectionContainer}>
-          <TileBoard />
-          {!isMobileView ? <div style={styles.spacing} /> : null}
-          {!isMobileView ? <RssPane feed={rss.feed} /> : null }
-        </div>
-        {isMobileView ? <div style={styles.sectionContainer}>
+        <div style={styles.infoSection}>
+          <ProjectsBoard />
           <RssPane feed={rss.feed} />
-        </div> : null}
+        </div>
       </div>
     );
   }

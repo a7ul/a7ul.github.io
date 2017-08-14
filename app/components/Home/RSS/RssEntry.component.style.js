@@ -12,12 +12,11 @@ export default {
   bullet: {
     display: 'inline',
     paddingRight: 5,
-    color: theme.tileRed
   },
   date: {
     padding: '2px 0',
     display: 'inline-block',
-    fontSize: 12,
+    fontSize: '0.8em',
     color: theme.tileGreen
   },
   content: {
@@ -33,7 +32,7 @@ export default {
     marginLeft: 10,
     padding: 5,
     color: 'black',
-    fontSize: 12,
+    fontSize: '0.8em',
     fontWeight: 700
   }
 };

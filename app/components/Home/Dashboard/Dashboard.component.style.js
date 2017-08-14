@@ -3,16 +3,21 @@ import theme from '../../../style/theme';
 export default {
   container: {
     flex: 1,
-    alignItems: 'center',
-    minHeight: 310
+    display: 'flex',
+    justifyContent: 'center',
+    minHeight: 310,
+    flexDirection: 'column',
+  },
+  wrapper: {
+    paddingBottom: 60
   },
   dashboard: {
     flex: 1,
-    padding: '0 10px 0 10px',
+    padding: '0 10px',
     textAlign: 'center'
   },
   title: {
-    fontSize: 30,
+    fontSize: '2em',
     fontWeight: 200,
     padding: 10,
     color: theme.tileGreen
@@ -24,7 +29,7 @@ export default {
   subtitle: {
     padding: '5px 20px 20px 20px',
     fontWeight: 600,
-    fontSize: 15
+    fontSize: '1em'
   },
   dot: {
     color: theme.tileRed

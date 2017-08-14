@@ -5,11 +5,10 @@ export default {
   container: {
     backgroundColor: theme.backgroundWhite,
     height: '100vh',
-    width: '100vw',
-    overflow: 'auto'
-  },
-  header: {
-    padding: '7px 15px',
+    overflow: 'auto',
+    display: 'flex',
+    padding: 10,
+    flexDirection: 'row'
   },
   logo: {
     background: `url(${logo})`,
@@ -18,14 +17,15 @@ export default {
     height: 30,
     width: 30
   },
-  spacing: {
+  dashboardSection: {
     display: 'flex',
-    paddingRight: 20
+    flex: 4,
+    flexDirection: 'column'
   },
-  sectionContainer: {
-    padding: '0 15px 20px',
+  infoSection: {
+    borderLeft: '1px solid rgb(203, 203, 204)',
     display: 'flex',
-    flex: 1,
-    flexDirection: 'row'
+    flex: 5,
+    flexDirection: 'column'
   }
 };
