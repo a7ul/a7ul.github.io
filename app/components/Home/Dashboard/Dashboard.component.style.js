@@ -5,7 +5,6 @@ export default {
     flex: 1,
     display: 'flex',
     justifyContent: 'center',
-    minHeight: 310,
     flexDirection: 'column',
   },
   wrapper: {

@@ -13,13 +13,15 @@ class Home extends Component {
 
   render () {
     const {rss = {}, isMobileView} = this.props;
+    const containerStyle = isMobileView ? {...styles.container, ...styles.container_M} : styles.container;
+    const infoSectionStyle = isMobileView ? {...styles.infoSection, ...styles.infoSection_M} : styles.infoSection;
     return (
-      <div style={styles.container}>
+      <div style={containerStyle}>
         <div style={styles.dashboardSection}>
           <div style={styles.logo} />
           <Dashboard isMobileView={isMobileView}/>
         </div>
-        <div style={styles.infoSection}>
+        <div style={infoSectionStyle}>
           <ProjectsBoard />
           <RssPane feed={rss.feed} />
         </div>
