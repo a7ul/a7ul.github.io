@@ -1,18 +1,4 @@
-import {injectStyle} from '../../../style/utility';
 import theme from '../../../style/theme';
-
-const keyframesStyle = `
-  @-webkit-keyframes pulse {
-    0% {transform: translateY(-100%);}
-    50%{transform: translateY(8%);}
-    65%{transform: translateY(-4%);}
-    80%{transform: translateY(4%);}
-    95%{transform: translateY(-2%);}
-    100% {transform: translateY(0%);}
-  }
-`;
-
-injectStyle(keyframesStyle);
 
 export default {
   container: {
@@ -21,8 +7,9 @@ export default {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    animationName: 'pulse',
-    animationDuration: '1s'
+    animationName: 'slideInFromTop',
+    animationDuration: '1s',
+    cursor: 'pointer'
   },
   icon: {
     size: 40

@@ -20,7 +20,9 @@ export default {
   dashboardSection: {
     display: 'flex',
     flex: 4,
-    flexDirection: 'column'
+    flexDirection: 'column',
+    animationName: 'fadeIn',
+    animationDuration: '2s'
   },
   infoSection: {
     borderLeft: '1px solid rgb(203, 203, 204)',
