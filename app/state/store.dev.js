@@ -11,7 +11,7 @@ const composeEnhancers =
     }) : compose;
 
 const enhancer = composeEnhancers(
-  applyMiddleware(thunk, promise, reduxRouterMiddleware)
+  applyMiddleware(reduxRouterMiddleware, thunk, promise)
 );
 
 export default (initialState = {}) => createStore(rootReducer, initialState, enhancer);

@@ -2,17 +2,19 @@ import React, {Component} from 'react';
 import styles from './ProjectsBoard.component.style';
 import ProjectCategory from './ProjectCategory.component';
 import theme from '../../../style/theme';
+import PropTypes from 'prop-types';
 
 class ProjectsBoard extends Component {
   static propTypes = {
-
+    goToExperiments: PropTypes.func
   }
 
   render () {
+    const {goToExperiments} = this.props;
     return (
       <div style={styles.container}>
         <div style={styles.row}>
-          <ProjectCategory style={styles.topLeft} iconName='flask' title='PROJECTS & EXPERIMENTS' count={20} iconColor={theme.tileRed}/>
+          <ProjectCategory onPress={goToExperiments} style={styles.topLeft} iconName='flask' title='PROJECTS & EXPERIMENTS' count={20} iconColor={theme.tileRed}/>
           <ProjectCategory style={styles.topRight} iconName='code' title='OPEN SOURCED LIBRARIES' count={14} iconColor={theme.tileGreen}/>
         </div>
         <div style={styles.row}>
@@ -23,7 +25,5 @@ class ProjectsBoard extends Component {
     );
   }
 }
-
-// <ProjectTile name='ImShow-Java-OpenCV' imgUrl={null} topics={['yo', 'java', 'opencv']} url='http://google.com' forkCount={3} starCount={4} description='an alternative to imshow() in C++ OpenCV for Java OpenCV' />
 
 export default ProjectsBoard;

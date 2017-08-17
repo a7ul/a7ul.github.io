@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styles from './ProjectCategory.component.style';
 import Icon from '../../Icon/Icon.component';
 import PropTypes from 'prop-types';
+import noop from 'lodash/noop';
 
 class ProjectCategory extends Component {
   static propTypes = {
@@ -9,12 +10,13 @@ class ProjectCategory extends Component {
     title: PropTypes.string,
     iconColor: PropTypes.string,
     count: PropTypes.number,
-    style: PropTypes.object
+    style: PropTypes.object,
+    onPress: PropTypes.func
   }
   render () {
-    const {iconName = 'flask', style = {}, iconColor = 'black', title = '', count = 0} = this.props;
+    const {iconName = 'flask', onPress = noop, style = {}, iconColor = 'black', title = '', count = 0} = this.props;
     return (
-      <div style={{...styles.container, ...style}}>
+      <div onClick={onPress} style={{...styles.container, ...style}}>
         {count ? <div style={styles.count}>{count}</div> : null}
         <Icon name={iconName} {...styles.icon} fill={iconColor} />
         <div style={styles.title}>{title}</div>
@@ -22,7 +24,5 @@ class ProjectCategory extends Component {
     );
   }
 }
-
-// <ProjectTile name='ImShow-Java-OpenCV' imgUrl={null} topics={['yo', 'java', 'opencv']} url='http://google.com' forkCount={3} starCount={4} description='an alternative to imshow() in C++ OpenCV for Java OpenCV' />
 
 export default ProjectCategory;

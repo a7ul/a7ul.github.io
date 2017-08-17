@@ -1,4 +1,3 @@
-import logo from '../../assets/logo.png';
 import theme from '../../style/theme';
 
 export default {
@@ -15,13 +14,6 @@ export default {
     flexFlow: 'column nowrap',
     minHeight: '100vh',
     height: null
-  },
-  logo: {
-    background: `url(${logo})`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    height: 30,
-    width: 30
   },
   dashboardSection: {
     animationName: 'fadeIn',

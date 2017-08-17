@@ -5,12 +5,15 @@ import {connect} from 'react-redux';
 import {updateRSSFeed} from '../../state/actions/index.actions';
 import result from 'lodash/result';
 import PropTypes from 'prop-types';
+import {routerActions} from '../../routes/router';
 
 class HomePage extends Component {
   static propTypes = {
     updateRSS: PropTypes.func,
     rss: PropTypes.object,
-    isMobileView: PropTypes.bool
+    isMobileView: PropTypes.bool,
+    goToExperiments: PropTypes.func,
+    goToHome: PropTypes.func
   }
   componentDidMount () {
     const {updateRSS} = this.props;
@@ -23,9 +26,9 @@ class HomePage extends Component {
     });
   }
   render () {
-    const {rss, isMobileView} = this.props;
+    const {rss, isMobileView, goToHome, goToExperiments} = this.props;
     return (
-      <HomeView rss={rss} isMobileView={isMobileView}/>
+      <HomeView rss={rss} goToHome={goToHome} goToExperiments={goToExperiments} isMobileView={isMobileView}/>
     );
   }
 }
@@ -36,7 +39,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updateRSS: (rssParsed) => dispatch(updateRSSFeed(rssParsed))
+  updateRSS: (rssParsed) => dispatch(updateRSSFeed(rssParsed)),
+  goToExperiments: () => dispatch(routerActions.push('experiments')),
+  goToHome: () => dispatch(routerActions.push('/'))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

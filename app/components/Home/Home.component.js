@@ -3,26 +3,29 @@ import styles from './Home.component.style';
 import Dashboard from './Dashboard/Dashboard.component';
 import PropTypes from 'prop-types';
 import RssPane from './RSS/RssPane.component';
+import Logo from '../Logo/Logo.component';
 import ProjectsBoard from './ProjectsBoard/ProjectsBoard.component';
 
 class Home extends Component {
   static propTypes = {
     isMobileView: PropTypes.bool,
-    rss: PropTypes.object
+    rss: PropTypes.object,
+    goToExperiments: PropTypes.func,
+    goToHome: PropTypes.func
   }
 
   render () {
-    const {rss = {}, isMobileView} = this.props;
+    const {rss = {}, isMobileView, goToExperiments, goToHome} = this.props;
     const containerStyle = isMobileView ? {...styles.container, ...styles.container_M} : styles.container;
     const infoSectionStyle = isMobileView ? {...styles.infoSection, ...styles.infoSection_M} : styles.infoSection;
     return (
       <div style={containerStyle}>
         <div style={styles.dashboardSection}>
-          <div style={styles.logo} />
+          <Logo onPress={goToHome}/>
           <Dashboard isMobileView={isMobileView}/>
         </div>
         <div style={infoSectionStyle}>
-          <ProjectsBoard />
+          <ProjectsBoard goToExperiments={goToExperiments}/>
           <RssPane feed={rss.feed} />
         </div>
       </div>
