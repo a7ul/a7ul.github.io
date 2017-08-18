@@ -5,6 +5,7 @@ import {ConnectedRouter, routerMiddleware, push, goBack} from 'react-router-redu
 
 import Home from '../pages/Home/Home.page';
 import Experiments from '../pages/Experiments/Experiments.page';
+import Libraries from '../pages/Libraries/Libraries.page';
 
 const history = createHistory();
 const Router = () => (
@@ -12,6 +13,7 @@ const Router = () => (
     <div>
       <Route exact path='/' component={Home}/>
       <Route path='/experiments' component={Experiments}/>
+      <Route path='/libraries' component={Libraries}/>
     </div>
   </ConnectedRouter>
 );

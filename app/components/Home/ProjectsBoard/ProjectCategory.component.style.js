@@ -4,8 +4,9 @@ export default {
   container: {
     display: 'flex',
     flex: 1,
+    padding: 10,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
     animationName: 'slideInFromTop',
     animationDuration: '1s',

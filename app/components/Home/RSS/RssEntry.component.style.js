@@ -22,7 +22,8 @@ export default {
   content: {
     paddingTop: 10,
     textAlign: 'justify',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    fontSize: '1em'
   },
   categories: {
     display: 'inline-block'

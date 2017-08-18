@@ -13,6 +13,7 @@ class HomePage extends Component {
     rss: PropTypes.object,
     isMobileView: PropTypes.bool,
     goToExperiments: PropTypes.func,
+    goToLibraries: PropTypes.func,
     goToHome: PropTypes.func
   }
   componentDidMount () {
@@ -26,9 +27,9 @@ class HomePage extends Component {
     });
   }
   render () {
-    const {rss, isMobileView, goToHome, goToExperiments} = this.props;
+    const {rss, isMobileView, goToHome, goToExperiments, goToLibraries} = this.props;
     return (
-      <HomeView rss={rss} goToHome={goToHome} goToExperiments={goToExperiments} isMobileView={isMobileView}/>
+      <HomeView rss={rss} goToHome={goToHome} goToExperiments={goToExperiments} goToLibraries={goToLibraries} isMobileView={isMobileView}/>
     );
   }
 }
@@ -41,6 +42,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   updateRSS: (rssParsed) => dispatch(updateRSSFeed(rssParsed)),
   goToExperiments: () => dispatch(routerActions.push('experiments')),
+  goToLibraries: () => dispatch(routerActions.push('libraries')),
   goToHome: () => dispatch(routerActions.push('/'))
 });
 
