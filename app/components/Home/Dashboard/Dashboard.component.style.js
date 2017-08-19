@@ -8,7 +8,7 @@ export default {
     flexDirection: 'column',
   },
   wrapper: {
-    paddingBottom: 60
+
   },
   dashboard: {
     flex: 1,
@@ -37,5 +37,17 @@ export default {
     width: 130,
     borderRadius: 80,
     boxShadow: 'lightgrey -1px 4px 3px'
+  },
+  selfUpdating: {
+    textAlign: 'center',
+    padding: 20,
+    color: theme.linkedInBlue,
+    fontSize: '0.8em'
+  },
+  selfbloglink: {
+    fontSize: '0.9em',
+    cursor: 'pointer',
+    fontWeight: 'bold',
+    color: theme.tileGreen
   }
 };

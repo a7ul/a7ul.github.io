@@ -13,6 +13,5 @@ export const getProjectsBasedOnTag = (projectsList, tag) => {
     const topics = result(project, 'repositoryTopics.nodes', []);
     return topics.find(({topic}) => result(topic, 'name') === tag);
   });
-  console.log(selectedProjects);
   return orderBy(selectedProjects, 'stargazers.totalCount', 'desc');
 };
