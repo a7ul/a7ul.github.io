@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {updateRSSFeed} from '../../state/actions/index.actions';
 import result from 'lodash/result';
 import PropTypes from 'prop-types';
+import projectsList from '../../assets/json/projects.json';
 import {routerActions} from '../../routes/router';
 
 class HomePage extends Component {
@@ -29,7 +30,7 @@ class HomePage extends Component {
   render () {
     const {rss, isMobileView, goToHome, goToExperiments, goToLibraries} = this.props;
     return (
-      <HomeView rss={rss} goToHome={goToHome} goToExperiments={goToExperiments} goToLibraries={goToLibraries} isMobileView={isMobileView}/>
+      <HomeView rss={rss} goToHome={goToHome} projectsList={projectsList} goToExperiments={goToExperiments} goToLibraries={goToLibraries} isMobileView={isMobileView}/>
     );
   }
 }

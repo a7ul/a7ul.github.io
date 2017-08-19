@@ -18,7 +18,8 @@ export default {
   title: {
     fontWeight: 300,
     fontSize: '2em',
-    paddingTop: 10
+    paddingTop: 10,
+    paddingRight: 10
   },
   description: {
     fontStyle: 'italic',

@@ -3,7 +3,7 @@ import ProjectsView from '../../components/Projects/Projects.component';
 import {connect} from 'react-redux';
 import result from 'lodash/result';
 import PropTypes from 'prop-types';
-import {getExperiments} from '../../utils/transformer.util';
+import {getProjectsBasedOnTag} from '../../utils/transformer.util';
 import projectsList from '../../assets/json/projects.json';
 import {routerActions} from '../../routes/router';
 
@@ -16,7 +16,7 @@ class ExperimentsPage extends Component {
   render () {
     const {isMobileView, goToHome} = this.props;
     const title = 'Experiments';
-    const projects = getExperiments(projectsList);
+    const projects = getProjectsBasedOnTag(projectsList, 'experiment');
     const description = 'Curiosity + Creativity = Breakthroughs';
     const iconName = 'flask';
     return (

@@ -12,11 +12,12 @@ class Home extends Component {
     rss: PropTypes.object,
     goToExperiments: PropTypes.func,
     goToLibraries: PropTypes.func,
-    goToHome: PropTypes.func
+    goToHome: PropTypes.func,
+    projectsList: PropTypes.array
   }
 
   render () {
-    const {rss = {}, isMobileView, goToExperiments, goToLibraries, goToHome} = this.props;
+    const {rss = {}, isMobileView, goToExperiments, goToLibraries, goToHome, projectsList} = this.props;
     const containerStyle = isMobileView ? {...styles.container, ...styles.container_M} : styles.container;
     const infoSectionStyle = isMobileView ? {...styles.infoSection, ...styles.infoSection_M} : styles.infoSection;
     return (
@@ -26,7 +27,7 @@ class Home extends Component {
           <Dashboard isMobileView={isMobileView}/>
         </div>
         <div style={infoSectionStyle}>
-          <ProjectsBoard goToExperiments={goToExperiments} goToLibraries={goToLibraries} isMobileView={isMobileView}/>
+          <ProjectsBoard projectsList={projectsList} goToExperiments={goToExperiments} goToLibraries={goToLibraries} isMobileView={isMobileView}/>
           <RssPane feed={rss.feed} />
         </div>
       </div>

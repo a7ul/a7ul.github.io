@@ -3,7 +3,7 @@ export default {
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
-    padding: '0 0 10px 10px',
+    padding: '10px',
     justifyContent: 'space-evenly'
   },
   about: {
@@ -25,6 +25,7 @@ export default {
     display: 'flex',
     flex: 1,
     padding: 10,
+    textAlign: 'justify',
     fontSize: '1em'
   },
   row: {
