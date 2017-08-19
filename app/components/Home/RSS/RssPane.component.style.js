@@ -7,7 +7,7 @@ export default {
     flexDirection: 'column',
     padding: '10px 0',
     borderTop: '1px solid rgb(203, 203, 204)',
-    justifyContent: 'center'
+    justifyContent: 'space-evenly'
   },
   blogTitle: {
     fontWeight: 800,

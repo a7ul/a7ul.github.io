@@ -4,6 +4,7 @@ import styles from './Projects.component.style';
 import PropTypes from 'prop-types';
 import Logo from '../Logo/Logo.component';
 import ProjectTile from './ProjectTile.component';
+import result from 'lodash/result';
 
 class Projects extends Component {
   static propTypes = {
@@ -27,11 +28,13 @@ class Projects extends Component {
         <div style={styles.projectContainer}>
           {
             projects.map((eachProject, i) => {
-              const {name, imgUrl, starCount, url, topics, forkCount, description} = eachProject;
+              const {name, imgUrl, stargazers, url, repositoryTopics, forks, description, homepageUrl} = eachProject;
+              const topics = result(repositoryTopics, 'nodes', []).map((eachRepoTopic) => result(eachRepoTopic, 'topic.name'));
               return <ProjectTile key={i} name={name}
                 imgUrl ={imgUrl}  url ={url}
-                starCount ={starCount}  topics ={topics}
-                forkCount ={forkCount}  description ={description} isMobileView={isMobileView}/>;
+                demoLink = {homepageUrl}
+                starCount ={result(stargazers, 'totalCount')}  topics ={topics}
+                forkCount ={result(forks, 'totalCount')}  description ={description} isMobileView={isMobileView}/>;
             })
           }
         </div>

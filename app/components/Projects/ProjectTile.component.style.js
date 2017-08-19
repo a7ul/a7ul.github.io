@@ -23,7 +23,7 @@ export default {
     flexDirection: 'column',
     flex: 1,
     justifyContent: 'space-between',
-    padding: '10px 10px 0 10px'
+    padding: '10px 10px 5px 10px'
   },
   name: {
     fontWeight: 'bold',
@@ -33,7 +33,19 @@ export default {
   description: {
     fontWeight: 400,
     textTransform: 'capitalize',
-    fontSize: '0.9em'
+    fontSize: '0.9em',
+    padding: '10px 0'
+  },
+  descriptionUrl: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  url: {
+    cursor: 'pointer',
+    display: 'flex',
+    alignSelf: 'flex-end',
+    padding: 10
   },
   topics: {
     display: 'inline-block'
@@ -47,28 +59,26 @@ export default {
   },
   bottomBar: {
     display: 'flex',
-    fontSize: '0.7em',
+    fontSize: '0.9em',
+    fontWeight: 'bold',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '0 10px',
+    padding: '5px 10px',
     background: 'rgba(0,0,0,0.6)',
     color: 'white'
   },
   starIcon: {
     fill: theme.tileYellow,
-    size: 12
+    size: 14
   },
   forkIcon: {
     fill: theme.tileBlue,
-    size: 12
-  },
-  linkIcon: {
-    fill: theme.tileRed,
-    size: 12
+    size: 14
   },
   iconGroup: {
     display: 'flex',
+    justifyContent: 'center',
     flexDirection: 'row'
   },
   bottomBarElement: {
@@ -77,14 +87,17 @@ export default {
   },
   demoLink: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'stretch',
     fontSize: '0.8em',
     fontWeight: 400,
-    color: 'white',
     textAlign: 'center',
     background: theme.tileRed,
-    alignSelf: 'flex-end',
+    alignSelf: 'center',
     padding: 5,
-    borderRadius: '5px 5px 0 0'
+    borderRadius: '5px'
+  },
+  demoLinkHref: {
+    display: 'flex',
+    color: 'white'
   }
 };

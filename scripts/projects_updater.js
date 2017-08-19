@@ -41,7 +41,8 @@ const _generateProjectReposQuery = (totalResults = 100, nextId = null, repositor
             forks {
               totalCount
             },
-            description
+            homepageUrl,
+            description,
             repositoryTopics (first: ${totalResults}){
               nodes {
                 topic {

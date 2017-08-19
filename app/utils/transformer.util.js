@@ -9,9 +9,10 @@ export const dateFormatter = (date) => {
 };
 
 export const getProjectsBasedOnTag = (projectsList, tag) => {
-  const experiments = projectsList.filter((project) => {
+  const selectedProjects = projectsList.filter((project) => {
     const topics = result(project, 'repositoryTopics.nodes', []);
     return topics.find(({topic}) => result(topic, 'name') === tag);
   });
-  return orderBy(experiments, 'stargazers.totalCount', 'desc');
+  console.log(selectedProjects);
+  return orderBy(selectedProjects, 'stargazers.totalCount', 'desc');
 };
