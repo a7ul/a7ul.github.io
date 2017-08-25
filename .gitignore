@@ -1,6 +1,4 @@
 *.un~
-bundle/*
-!bundle/.gitkeep
 cache
 node_modules
 npm-debug.log
