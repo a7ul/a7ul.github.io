@@ -1,12 +1,11 @@
 import React from 'react';
-import './App.css';
 
 interface AppProps {}
 
 function App(props: AppProps) {
   return (
-    <div className="App">
-      <header className="App-header">Yo</header>
+    <div className="bg-gray-700 rounded-md">
+      <header>Yo</header>
     </div>
   );
 }
