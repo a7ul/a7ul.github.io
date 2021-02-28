@@ -19,7 +19,7 @@ function App(props: AppProps) {
         </div>
       </section>
       <section>
-        <div className="flex justify-center">
+        <div className="flex flex-wrap justify-center">
           <a className="p-10 text-blue-800" href="https://blog.atulr.com">
             Blog
           </a>
