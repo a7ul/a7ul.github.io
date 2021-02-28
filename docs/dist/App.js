@@ -13,7 +13,7 @@ function App(props) {
     src: dp,
     className: "object-scale-down lg:w-96 w-80 rounded-full ring ring-yellow-700"
   }))), /* @__PURE__ */ React.createElement("section", null, /* @__PURE__ */ React.createElement("div", {
-    className: "flex justify-center"
+    className: "flex flex-wrap justify-center"
   }, /* @__PURE__ */ React.createElement("a", {
     className: "p-10 text-blue-800",
     href: "https://blog.atulr.com"
